@@ -1,22 +1,29 @@
-# RHCSA Day06 笔记
+# RHCSA Day05 笔记
 日期：2026-04-12
 环境：Rocky Linux 9
 
 ## 今日内容
-1. DNF 软件管理：安装、查询、删除
-2. 查看命令所属包：dnf provides
-3. systemd 服务管理：启动、停止、开机自启、状态
-4. 定时任务 crontab：用户级计划任务
-5. 时间同步 chrony
+1. 查看 SELinux 状态：getenforce、sestatus
+2. 切换模式：enforcing / permissive
+3. 永久修改配置：/etc/selinux/config
+4. 文件上下文查看：ls -Z、ps -Z
+5. 临时修改上下文：chcon
+6. 永久修改上下文：semanage fcontext + restorecon
+7. 常见服务上下文：httpd、nginx 相关
 
 ## 考试要点
-- 安装包用 dnf install -y
-- 服务必须设置 enable 开机自启
-- 定时任务分分钟小时日月周，格式别写错
-- 时间同步用 chrony，不是 ntp
+- 考试默认都是 enforcing 模式，不能随便关掉
+- 修改默认目录时，SELinux 上下文一定会错
+- 永久生效必须用 semanage + restorecon，不要依赖 chcon
+- 排错优先看上下文、看日志
 
 ## 核心命令
-dnf install / remove / provides / list
-systemctl start / stop / restart / enable / status
-crontab -e / -l
-chronyc sources
+getenforce
+setenforce 0|1
+sestatus
+ls -Z
+ps -Z
+chcon
+semanage fcontext
+restorecon
+/var/log/audit/audit.log
