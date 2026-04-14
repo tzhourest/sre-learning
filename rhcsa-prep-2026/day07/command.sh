@@ -1,7 +1,3 @@
-# ==============================================
-# RHCSA Day07 系统排错与密码重置
-# ==============================================
-
 # 1. 查看当前挂载与 fstab
 cat /etc/fstab
 mount
@@ -25,6 +21,7 @@ lsblk > /data/rhcsa/day07/lsblk.txt
 mount > /data/rhcsa/day07/mount.txt
 systemctl --failed > /data/rhcsa/day07/failed.txt
 
+# 4. 单用户模式重置root密码
 # 重启进入 GRUB 后按 e
 # 找到 linux 行末尾加入：
 rd.break console=tty0
