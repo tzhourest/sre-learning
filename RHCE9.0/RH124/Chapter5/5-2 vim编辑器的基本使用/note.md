@@ -3,8 +3,7 @@
 主题：vim编辑器的基本使用
 
 ## 核心命令
-- vi filename
-- vim filename
+- vi filename,vim filename 打开文件进行编辑 
 
 ##  注意事项
 - '>'命令比较危险，因为会覆盖之前的内容
