@@ -1,4 +1,4 @@
-<img width="466" height="68" alt="image" src="https://github.com/user-attachments/assets/95db7c29-a8f4-4284-9b9a-8bb074ba5269" /># 学习笔记
+# 学习笔记
 日期：2026-05-06
 主题：用户和用户组概念
 
