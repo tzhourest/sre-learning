@@ -1,0 +1,10 @@
+# 学习笔记
+日期：2026-05-13
+主题：系统日志架构
+
+##  系统日志文件
+- /var/log/messages：大多数系统日志都会在此处记录
+- /var/log/secure：有关安全和系统认证的日志
+- /var/log/maillog：有关邮件服务器的系统认证日志
+- /var/log/cron：有关计划任务执行的系统日志
+- /var/log/boot.log：与系统启动相关的非syslog控制台消息
