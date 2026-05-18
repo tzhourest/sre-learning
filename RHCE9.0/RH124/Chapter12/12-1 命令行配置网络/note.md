@@ -22,4 +22,5 @@
 ## 删除网络管理配置文件
 - nmcli con del con-name 删除配置文件
 
-## 
+## 网络管理器权限的修改
+- nmcli gen permissions
