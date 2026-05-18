@@ -17,3 +17,9 @@
 
 ## 管理网络配置文件
 - nmcli con up con-name 激活该配置文件
+- nmcli dev disconnect con-name 断开该设备
+
+## 删除网络管理配置文件
+- nmcli con del con-name 删除配置文件
+
+## 
