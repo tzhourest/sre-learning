@@ -1,19 +1,13 @@
 # 学习笔记
 日期：2026-05-18
-主题：系统日志架构
+主题：命令行配置网络
 
-##  系统日志文件
-- /var/log/messages：大多数系统日志都会在此处记录
-- /var/log/secure：有关安全和系统认证的日志
-- /var/log/maillog：有关邮件服务器的系统认证日志
-- /var/log/cron：有关计划任务执行的系统日志
-- /var/log/boot.log：与系统启动相关的非syslog控制台消息
+## 查看网络信息
+- nmcli dev status 查看所有网络设备的状态
+- nmcli con show 查看所有的配置文件
 
-## 保护journal日志
-- journal log 保存在/run/log文件夹下
-- systemd-journald的配置文件在/etc/systemd/journald.conf里
-- 如果想要保护journal日志就需要修改配置文件里的Storage参数，分别是：<br>
-***persistent,将日志存储在/var/log/journal目录中，该目录会在系统重启后保持不变***<br>
-***volatile,将日志存储在/run/log/journal目录中，由于/run文件系统是临时的，仅存在于运行内存中，因此其中的数据在重启后会变化<br>***
-***auto,如果/var/log/journal目录存在，则systemd-journald服务会使用持久存储，否则会使用临时存储<br>***
-***none,请勿使用任何存储设备。系统会删除所有日志但是仍可以将日志进行转发***
+## 添加网络配置文件
+- 以下示例为名为"eno2"的eno2接口添加一个配置文件。该配置文件的网络信息使用了DHCP服务，并且在启动设备时会自动连接。<br>
+  系统还通过在本地链路上监听路由器通告来获取IPv6网络设置。配置文件的名称包含了"nmcli"命令的"conname"参数的值，即"eno2"。<br>
+  "con-name"参数的值被保存到/etc/NetworkManager/system-connections/eno2.nmconnection文件中。<br>
+***nmcli con add con-name eno2 type ethernet ifname eno2***
