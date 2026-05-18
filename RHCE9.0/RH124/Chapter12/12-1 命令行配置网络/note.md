@@ -11,3 +11,9 @@
   系统还通过在本地链路上监听路由器通告来获取IPv6网络设置。配置文件的名称包含了"nmcli"命令的"conname"参数的值，即"eno2"。<br>
   "con-name"参数的值被保存到/etc/NetworkManager/system-connections/eno2.nmconnection文件中。<br>
 ***nmcli con add con-name eno2 type ethernet ifname eno2***
+- 以下示例为eno3设备创建了eno3配置文件，并设置了静态的IPV4网络参数。此命令将IP地址192.168.0.5配置为具有24位网络前缀<br>
+网络网关为192.168.0.254。如果添加的配置文件名称已经存在，则nmcli con add命令将失败。
+***nmcli con add con-name eno3 type ethernet ifname eno3 ipv4.addresses 192.168.0.5/24 ipv4.gateway 192.168.0.254***
+
+## 管理网络配置文件
+- nmcli con up con-name 激活该配置文件
