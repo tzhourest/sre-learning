@@ -14,3 +14,10 @@
 - -p 或 --preserve-permissions ：在解压时保留原始文件的权限
 - --xattrs ：启用扩展属性支持，并存储扩展文件属性
 - --selinux ：启用SELinux上下文支持，并存储SELinux文件上下文
+
+### 用于选择算法的tar命令
+- -a 或 --auto-compress ：根据压缩文件的后缀名来确定所使用的算法
+- -z 或 --gzip ：使用gzip压缩算法，生成的文件后缀为tar.gz
+- -j 或 --bzip2 ：使用bzip2压缩算法，生的文件后缀为tar.bz2
+- -J 或 --xz ：使用xz压缩算法，生成的文件后缀为tar.xz
+- -Z 或 --compress ：使用一种与LZ相似的算法，生成的文件后缀为tar.z
