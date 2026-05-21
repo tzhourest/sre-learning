@@ -20,4 +20,4 @@
 - -z 或 --gzip ：使用gzip压缩算法，生成的文件后缀为tar.gz
 - -j 或 --bzip2 ：使用bzip2压缩算法，生的文件后缀为tar.bz2
 - -J 或 --xz ：使用xz压缩算法，生成的文件后缀为tar.xz
-- -Z 或 --compress ：使用一种与LZ相似的算法，生成的文件后缀为tar.z
+- -Z 或 --compress ：使用一种与LZ相似的算法，生成的文件后缀为tar.Z
